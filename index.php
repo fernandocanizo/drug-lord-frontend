@@ -98,7 +98,7 @@
 								<td>7</td>
 								<td>2,123</td>
 								<td>
-									<button type="button" class="btn btn-primary btn-sm">Buy &raquo;</button>
+									<button type="button" class="btn btn-primary btn-xs">Buy &raquo;</button>
 								</td>
 							</tr>
 							<tr>
@@ -106,7 +106,7 @@
 								<td>10</td>
 								<td>7,587</td>
 								<td>
-									<button type="button" class="btn btn-primary btn-sm">Buy &raquo;</button>
+									<button type="button" class="btn btn-primary btn-xs">Buy &raquo;</button>
 								</td>
 							</tr>
 							<tr>
@@ -114,7 +114,7 @@
 								<td>3</td>
 								<td>345</td>
 								<td>
-									<button type="button" class="btn btn-primary btn-sm">Buy &raquo;</button>
+									<button type="button" class="btn btn-primary btn-xs">Buy &raquo;</button>
 								</td>
 							</tr>
 						</table>
@@ -131,7 +131,7 @@
 							</tr>
 							<tr>
 								<td>
-									<button type="button" class="btn btn-primary btn-sm">&laquo; Sell</button>
+									<button type="button" class="btn btn-primary btn-xs">&laquo; Sell</button>
 								</td>
 								<td>Cocain</td>
 								<td>7</td>
@@ -139,7 +139,7 @@
 							</tr>
 							<tr>
 								<td>
-									<button type="button" class="btn btn-primary btn-sm">&laquo; Sell</button>
+									<button type="button" class="btn btn-primary btn-xs">&laquo; Sell</button>
 								</td>
 								<td>Crack</td>
 								<td>10</td>
@@ -147,7 +147,7 @@
 							</tr>
 							<tr>
 								<td>
-									<button type="button" class="btn btn-primary btn-sm">&laquo; Sell</button>
+									<button type="button" class="btn btn-primary btn-xs">&laquo; Sell</button>
 								</td>
 								<td>Pot</td>
 								<td>3</td>
