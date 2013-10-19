@@ -159,7 +159,42 @@
 
 					<div class="col-lg-6">
 						<h2>World</h2>
-						<button type="button" class="btn btn-info btn-sm" id="switch_prices">See drug -> city prices</button>
+						<form class="form-inline">
+							<button type="button" class="btn btn-info btn-sm" id="switch_prices">See drug -> city prices</button>
+							<select class="form-control">
+								<option>Cocaine</option>
+								<option>Crack</option>
+								<option>Pot</option>
+							</select>
+						</form>
+
+						<table class="table table-striped">
+							<tr>
+								<th>City</th>
+								<th>Qty</th>
+								<th>Price</th>
+							</tr>
+							<tr>
+								<td>Boston</td>
+								<td>2</td>
+								<td>3,157</td>
+							</tr>
+							<tr>
+								<td>Paris</td>
+								<td>3</td>
+								<td>8,400</td>
+							</tr>
+							<tr>
+								<td>Moscow</td>
+								<td>5</td>
+								<td>308</td>
+							</tr>
+							<tr>
+								<td>Beijing</td>
+								<td>7</td>
+								<td>4,108</td>
+							</tr>
+						</table>
 					</div>
 				</div>
 
