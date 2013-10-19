@@ -86,14 +86,80 @@
 				<div class="row">
 					<div class="col-lg-3">
 						<h2>Market</h2>
+						<table class="table table-striped">
+							<tr>
+								<th>Name</th>
+								<th>Qty</th>
+								<th>Price</th>
+								<th></th>
+							</tr>
+							<tr>
+								<td>Cocain</td>
+								<td>7</td>
+								<td>2,123</td>
+								<td>
+									<button type="button" class="btn btn-primary btn-sm">Buy &raquo;</button>
+								</td>
+							</tr>
+							<tr>
+								<td>Crack</td>
+								<td>10</td>
+								<td>7,587</td>
+								<td>
+									<button type="button" class="btn btn-primary btn-sm">Buy &raquo;</button>
+								</td>
+							</tr>
+							<tr>
+								<td>Pot</td>
+								<td>3</td>
+								<td>345</td>
+								<td>
+									<button type="button" class="btn btn-primary btn-sm">Buy &raquo;</button>
+								</td>
+							</tr>
+						</table>
 					</div>
 
 					<div class="col-lg-3">
 						<h2>Carrying</h2>
+						<table class="table table-striped">
+							<tr>
+								<th></th>
+								<th>Name</th>
+								<th>Qty</th>
+								<th>Bought At</th>
+							</tr>
+							<tr>
+								<td>
+									<button type="button" class="btn btn-primary btn-sm">&laquo; Sell</button>
+								</td>
+								<td>Cocain</td>
+								<td>7</td>
+								<td>1,157</td>
+							</tr>
+							<tr>
+								<td>
+									<button type="button" class="btn btn-primary btn-sm">&laquo; Sell</button>
+								</td>
+								<td>Crack</td>
+								<td>10</td>
+								<td>4,400</td>
+							</tr>
+							<tr>
+								<td>
+									<button type="button" class="btn btn-primary btn-sm">&laquo; Sell</button>
+								</td>
+								<td>Pot</td>
+								<td>3</td>
+								<td>108</td>
+							</tr>
+						</table>
+
 					</div>
 
 					<div class="col-lg-6">
 						<h2>World</h2>
+						<button type="button" class="btn btn-info btn-sm" id="switch_prices">See drug -> city prices</button>
 					</div>
 				</div>
 
@@ -101,11 +167,9 @@
 					<div class="col-lg-12">
 						<h2>Actions</h2>
 						<form class="form-inline">
-							<button type="button" class="btn btn-primary" href="#">Buy &raquo;</button>
-							<button type="button" class="btn btn-primary" href="#">&laquo; Sell</button>
-							<button type="button" class="btn btn-danger" href="#">Dump All</button>
-							<button type="button" class="btn btn-default" href="#">Stay Here</button>
-							<label>Go...</label>
+							<button type="button" class="btn btn-danger">Dump All</button>
+							<button type="button" class="btn btn-default">Stay Here</button>
+							<label>or go away to...</label>
 							<select class="form-control">
 								<option>Boston</option>
 								<option>Paris</option>
