@@ -1,0 +1,16 @@
+URL: https://www.freelancer.com/projects/PHP-CSS/Rewrite-old-game-php-flash.5036834.html
+Employer: http://www.freelancer.com/u/rickdb.html
+
+Rewrite old game to php / flash. - repost
+
+Project Description: 
+
+Redesign this old game :
+
+http://www.geekhideout.com/druglord2.shtml
+
+Into a online web version with some additional features like a scoreboard etc..
+Don't mind how you do it (in which code / language) as long it is clean, good
+looking and no bugs.
+
+Thanks.
