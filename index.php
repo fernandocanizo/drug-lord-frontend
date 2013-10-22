@@ -2,6 +2,12 @@
 // Creation Date: 19 Oct 2013
 // Author: Fernando Canizo (aka conan) - http://conan.muriandre.com/
 
+
+require_once('root.path.php');
+require_once(ROOT_PATH . 'lib/game.php');
+
+$world = new World();
+$player = new Player('John Doe');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,15 +38,14 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="#">Druglord Demo</a>
+						<a class="navbar-brand" href="#">Web Drug Lord</a>
 					</div>
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="#">Home</a></li>
-							<li><a href="#about">About</a></li>
+							<li><a href="#about">Rules</a></li>
 							<li><a href="#contact">Contact</a></li>
 							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Other stuff <b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li><a href="#">Action</a></li>
 									<li><a href="#">Another action</a></li>
@@ -60,6 +65,8 @@
 							<input type="password" placeholder="Password" class="form-control">
 							</div>
 							<button type="submit" class="btn btn-success">Sign in</button>
+							or
+							<button type="submit" class="btn btn-danger">Register</button>
 						</form>
 					</div><!--/.navbar-collapse -->
 				</div>
@@ -69,16 +76,21 @@
 				<div class="row">
 					<div class="col-lg-6">
 						<h2>Information</h2>
-						<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+						<p class="well">Welcome to Web Drug Lord.</p>
 					</div>
 
-					<div class="col-lg-6">
+					<div class="col-lg-3">
+						<h2>Ads here</h2>
+						<p>Lorem ipsum dolor sit amet, consectetaur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					</div>
+
+					<div class="col-lg-3">
 						<h2>Status</h2>
 						<ul>
-							<li>Location: <strong>New York</strong></li>
-							<li>Day: <strong>3/30</strong></li>
-							<li>Rank: <strong>Wannabe</strong></li>
-							<li>Cash: <strong>1,990</strong></li>
+							<li>Location: <strong><?= $player->currentLocation ?></strong></li>
+							<li>Day: <strong><?= $world->currentDay ?> / <?= GameConfig::$maxDays ?></strong></li>
+							<li>Rank: <strong><?= $player->rank ?></strong></li>
+							<li>Cash: <strong><?= $player->cash ?></strong></li>
 						</ul>
 					</div>
 				</div>
@@ -93,35 +105,35 @@
 								<th>Price</th>
 								<th></th>
 							</tr>
+<?php
+foreach($world->cities[$player->currentLocation]->drugs as $drugName => $drugProps):
+	if($drugProps->canTrade):
+?>
+
 							<tr>
-								<td>Cocain</td>
-								<td>7</td>
-								<td>2,123</td>
+								<td><?= $drugName ?></td>
+								<td><?= $drugProps->quantity ?></td>
+								<td><?= $drugProps->price ?></td>
 								<td>
 									<button type="button" class="btn btn-primary btn-xs">Buy &raquo;</button>
 								</td>
 							</tr>
-							<tr>
-								<td>Crack</td>
-								<td>10</td>
-								<td>7,587</td>
-								<td>
-									<button type="button" class="btn btn-primary btn-xs">Buy &raquo;</button>
-								</td>
-							</tr>
-							<tr>
-								<td>Pot</td>
-								<td>3</td>
-								<td>345</td>
-								<td>
-									<button type="button" class="btn btn-primary btn-xs">Buy &raquo;</button>
-								</td>
-							</tr>
+<?php
+	endif;
+endforeach;
+?>
 						</table>
 					</div>
 
 					<div class="col-lg-3">
 						<h2>Carrying</h2>
+<?php
+if(0 === count($player->drugs)):
+?>
+						<p class="well">Nothing bought yet...</p>
+<?php
+else:
+?>
 						<table class="table table-striped">
 							<tr>
 								<th></th>
@@ -129,45 +141,29 @@
 								<th>Qty</th>
 								<th>Bought At</th>
 							</tr>
+<?php
+	foreach($player->drugs as $drugName => $drugProps):
+?>
 							<tr>
 								<td>
 									<button type="button" class="btn btn-primary btn-xs">&laquo; Sell</button>
 								</td>
-								<td>Cocain</td>
-								<td>7</td>
-								<td>1,157</td>
+								<td><?= $drugName ?></td>
+								<td><?= $drugProps->quantity ?></td>
+								<td><?= $drugProps->boughtAt ?></td>
 							</tr>
-							<tr>
-								<td>
-									<button type="button" class="btn btn-primary btn-xs">&laquo; Sell</button>
-								</td>
-								<td>Crack</td>
-								<td>10</td>
-								<td>4,400</td>
-							</tr>
-							<tr>
-								<td>
-									<button type="button" class="btn btn-primary btn-xs">&laquo; Sell</button>
-								</td>
-								<td>Pot</td>
-								<td>3</td>
-								<td>108</td>
-							</tr>
+<?php
+	endforeach;
+?>
 						</table>
+<?php
+endif;
+?>
 
 					</div>
 
 					<div class="col-lg-6">
 						<h2>World</h2>
-						<form class="form-inline">
-							<button type="button" class="btn btn-info btn-sm" id="switch_prices">See drug -> city prices</button>
-							<select class="form-control">
-								<option>Cocaine</option>
-								<option>Crack</option>
-								<option>Pot</option>
-							</select>
-						</form>
-
 						<table class="table table-striped">
 							<tr>
 								<th>City</th>
@@ -195,6 +191,16 @@
 								<td>4,108</td>
 							</tr>
 						</table>
+
+						<form class="form-inline">
+							<button type="button" class="btn btn-info btn-sm" id="switch_prices">See drug -> city prices</button>
+							<select class="form-control">
+								<option>Cocaine</option>
+								<option>Crack</option>
+								<option>Pot</option>
+							</select>
+						</form>
+
 					</div>
 				</div>
 
