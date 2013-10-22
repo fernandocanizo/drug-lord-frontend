@@ -195,9 +195,13 @@ endif;
 						<form class="form-inline">
 							<button type="button" class="btn btn-info btn-sm" id="switch_prices">See drug -> city prices</button>
 							<select class="form-control">
-								<option>Cocaine</option>
-								<option>Crack</option>
-								<option>Pot</option>
+<?php
+foreach(GameConfig::$drugPriceWeight as $drugName => $dontCare):
+?>
+								<option><?= $drugName ?></option>
+<?php
+endforeach;
+?>
 							</select>
 						</form>
 
