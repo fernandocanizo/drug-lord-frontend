@@ -170,26 +170,18 @@ endif;
 								<th>Qty</th>
 								<th>Price</th>
 							</tr>
+<?php
+$selectedDrug = 'Cocaine'; // TODO hardcoded, fix
+foreach($world->cities as $city => $drugs):
+?>
 							<tr>
-								<td>Boston</td>
-								<td>2</td>
-								<td>3,157</td>
+								<td><?= $city ?></td>
+								<td><?= $world->cities[$city]->drugs[$selectedDrug]->quantity ?></td>
+								<td><?= $world->cities[$city]->drugs[$selectedDrug]->price ?></td>
 							</tr>
-							<tr>
-								<td>Paris</td>
-								<td>3</td>
-								<td>8,400</td>
-							</tr>
-							<tr>
-								<td>Moscow</td>
-								<td>5</td>
-								<td>308</td>
-							</tr>
-							<tr>
-								<td>Beijing</td>
-								<td>7</td>
-								<td>4,108</td>
-							</tr>
+<?php
+endforeach;
+?>
 						</table>
 
 						<form class="form-inline">
