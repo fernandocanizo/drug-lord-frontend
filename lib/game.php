@@ -29,7 +29,7 @@ class City {
 		$this->drugs = array();
 
 		foreach(GameConfig::$drugPriceWeight as $d => $w):
-			$this->drugs[$d] = new Drug($w * 5);
+			$this->drugs[$d] = new Drug($w * 5 * rand(1, 10));
 		endforeach;
 	}
 }
